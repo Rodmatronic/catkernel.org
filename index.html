@@ -1,11 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar {
+  overflow: hidden;
+  /*outline: 1px solid; */
+  margin: 0;
+  padding-left: 22px;
+  background: rgb(56,119,221);
+  background: linear-gradient(90deg, rgba(56,119,221,0.5) 0%, rgba(56,119,221,1) 100%); 
+}
+
+.navbar {
+  overflow: hidden;
+  background: rgb(247,247,247);
+  background: linear-gradient(0deg, rgba(223,223,223,1) 0%, rgba(247,247,247,1) 100%);
+  border: 1px solid rgba(70, 70, 70, 0.5);
+  margin: 0;
+  padding-left: 22px;
+  box-shadow: 0px 5px 10px rgb(166, 166, 166);
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: rgb(68, 68, 68);
+  text-align: center;
+  padding: 6px 8px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.topbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(68, 68, 68);
+  padding: 9px 7px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(68, 68, 68);
+  padding: 8px 6px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background: linear-gradient(0deg, rgb(#f7f7f7) 0%, rgb(#dfdfdf) 100%);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Main content layout */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Left text blurb */
+.left-blurb {
+  flex: 1;
+  padding-left: 10px;
+}
+
+/* Middle section with big button, image, and text */
+.middle-section {
+  flex: 1;
+  text-align: center;
+}
+
+.middle-section img {
+  width: 100%;
+  max-width: 300px;
+  filter: drop-shadow(0px 15px 8px #939393);
+
+}
+
+.middle-section button {
+  background-color: #3877dd;
+  color: white;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(56,119,221,0.5) 0%, rgba(56,119,221,1) 100%); 
+  border: 1px solid rgba(70, 70, 70, 0.5);
+}
+
+.middle-section button:hover {
+  background-color: #1950a9;
+}
+
+/* Right text blurb */
+.right-blurb {
+  flex: 1;
+  padding-left: 20px;
+}
+</style>
 </head>
-<body>
-    <h1>Welcome to CatKernel!</h1>
+<body style="background-color:white;">
+
+<div class="topbar">
+    <img src="banner.png" alt="Placeholder Image">
+
+</div>
+<div class="navbar">
+  <button style="cursor: pointer;" onclick="document.location='https://rodmatronic.github.io/catkernel.org/'" class="topbtn">Home</button>
+  <button style="cursor: pointer;" onclick="document.location='https://rodmatronic.github.io/catkernel.org/'" class="topbtn">News</button>
+  <div class="dropdown">
+    <button class="dropbtn">Download 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Bleeding-Edge ISO</a>
+      <a href="#">Stable ISO</a>
+    </div>
+  </div> 
+</div>
+
+<div class="container">
+  <!-- Left text blurb -->
+  <div class="left-blurb">
+    <h3>What is CatKernel?</h3>
+    <p>CatKernel is a Unix-like kernel; made to be fast, versatile, and useful. It shares some similarity in layout & structure to BSD Unix.<br><br> The 'Bleeding-Edge' Disk Image has the most recent, testing builds of CatK and other binaries, all on the Disk. It is what we use when testing, or porting over new applications. The CatK 'Stable' Disk Image has known stable, working Binaries, and Kernel. Both Disk Images are in i386 compatible binary format.<br><br></p>
+    <h3>Who is maintaining CatKernel?</h3>
+    <p>CatKernel is being actively worked on by the CatKernel team at the <a href="https://github.com/rodmatronic/CatK">Github repository</a>. If you have any issues, please report it to the Issues section of the repository.<br><br></p>
+
+  </div>
+  
+  <!-- Middle section with big button, text, and image -->
+  <div class="middle-section">
+    <img src="logo300x300.png" alt="Placeholder Image">
+    <br>
+    <button>Dowload Bleeding-Edge ISO</button>
+    <button>Download stable CatK ISO</button>
+  </div>
+  
+  <!-- Right text blurb -->
+  <div class="right-blurb">
+    <h3>How can I contribute?</h3>
+    <p>You can help via developing kernel drivers, programs, or the main kernel itself. Please contact us at the <a href="https://discord.gg/hM8ZKf5E8B">Discord server</a>, It's quite nice there. Or directly request changes to merge at <a href="https://github.com/rodmatronic/CatK">Github repository</a>.<br><br></p>
+    <h3>Everyone who has helped with CatK, in alphabetical order:</h3>
+    <p>4vul<br>Gamer117<br>Irixaligned<br>Ruthenic<br>Rodmatronic/s<br>Roighteously<br>ZanXZ<br><br></p>
+
+  </div>
+</div>
+
 </body>
 </html>
